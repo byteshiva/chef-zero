@@ -21,7 +21,16 @@ RUN apt-get update -y && \
     apt-get clean && \
     rm -rf /var/cache/apt/archives/* /var/lib/apt/lists/*
 RUN gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
-RUN \curl --insecure  https://get.rvm.io | bash -s stable
+
+# Download the installer
+RUN \curl -O https://raw.githubusercontent.com/rvm/rvm/master/binscripts/rvm-installer
+RUN \curl -O https://raw.githubusercontent.com/rvm/rvm/master/binscripts/rvm-installer.asc
+
+# Verify the installer signature (might need `gpg2`), and if it validates...
+RUN gpg --verify rvm-installer.asc &&
+
+# Run the installer
+RUN bash rvm-installer stable
 RUN rvm install 2.3.0
 RUN \rvm use 2.3.0 --default
 RUN \gem install chef-zero
