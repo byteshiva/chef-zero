@@ -21,7 +21,7 @@ RUN apt-get update -y && \
     apt-get clean && \
     rm -rf /var/cache/apt/archives/* /var/lib/apt/lists/*
 
-RUN gpg2 --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
+RUN gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
 RUN curl -L get.rvm.io | bash -s stable
 RUN source /etc/profile.d/rvm.sh
 RUN rvm reload
