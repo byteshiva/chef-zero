@@ -13,6 +13,7 @@ RUN apt-get update -y && \
     apt-get install -y --no-install-recommends \
       curl \
       git \
+      ruby \
       wget \
       build-essential \
       libxml2-dev \
