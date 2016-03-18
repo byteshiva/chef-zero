@@ -32,7 +32,7 @@ RUN gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A170311380
 RUN curl -L get.rvm.io | bash -s stable
 RUN find / -name "rvm.sh" 
 RUN find / -name "rvm.sh" | xargs source 
-# RUN source /etc/profile.d/rvm.sh
+RUN source /etc/profile.d/rvm.sh
 # source /etc/profile.d/rvm.sh
 RUN rvm reload
 RUN rvm install 2.3.0
