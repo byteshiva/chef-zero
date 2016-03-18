@@ -28,12 +28,12 @@ RUN cd ruby-install-0.6.0/
 RUN sudo make install
 RUN ruby-install --latest ruby
 
-# RUN gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
-# RUN curl -L get.rvm.io | bash -s stable
+RUN gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
+RUN curl -L get.rvm.io | bash -s stable
 # RUN source /etc/profile.d/rvm.sh
-# RUN rvm reload
-# RUN rvm install 2.3.0
-# RUN rvm use 2.3.0 --default
+RUN rvm reload
+RUN rvm install 2.3.0
+RUN rvm use 2.3.0 --default
 
 # Run the installer
 # RUN bash rvm-installer stable
