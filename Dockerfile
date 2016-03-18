@@ -23,8 +23,8 @@ RUN apt-get update -y && \
 RUN gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
 
 # Download the installer
-RUN \curl -O https://raw.githubusercontent.com/rvm/rvm/master/binscripts/rvm-installer
-RUN \curl -O https://raw.githubusercontent.com/rvm/rvm/master/binscripts/rvm-installer.asc
+RUN \curl -O -k https://raw.githubusercontent.com/rvm/rvm/master/binscripts/rvm-installer
+RUN \curl -O -k https://raw.githubusercontent.com/rvm/rvm/master/binscripts/rvm-installer.asc
 
 # Verify the installer signature (might need `gpg2`), and if it validates...
 RUN gpg --verify rvm-installer.asc &&
