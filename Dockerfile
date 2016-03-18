@@ -24,9 +24,9 @@ RUN apt-get update -y && \
 
 RUN wget --no-check-certificate -O ruby-install-0.6.0.tar.gz https://github.com/postmodern/ruby-install/archive/v0.6.0.tar.gz
 RUN tar -xzvf ruby-install-0.6.0.tar.gz
-RUN cd ruby-install-0.6.0/
-RUN sudo make install
-RUN ruby-install --latest ruby
+# RUN cd ruby-install-0.6.0/
+#     \ sudo make install
+#     \ ruby-install --latest ruby
 
 RUN gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
 RUN curl -L get.rvm.io | bash -s stable
