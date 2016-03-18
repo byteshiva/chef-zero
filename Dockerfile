@@ -27,7 +27,7 @@ RUN \curl -O -k https://raw.githubusercontent.com/rvm/rvm/master/binscripts/rvm-
 RUN \curl -O -k https://raw.githubusercontent.com/rvm/rvm/master/binscripts/rvm-installer.asc
 
 # Verify the installer signature (might need `gpg2`), and if it validates...
-RUN gpg --verify rvm-installer.asc &&
+RUN gpg --verify rvm-installer.asc
 
 # Run the installer
 RUN bash rvm-installer stable
