@@ -29,7 +29,7 @@ RUN tar -xzvf ruby-install-0.6.0.tar.gz
 #     \ ruby-install --latest ruby
 
 RUN gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
-RUN curl -L get.rvm.io | bash -s stable
+RUN \curl -L get.rvm.io | bash -s stable
 RUN find / -name "rvm.sh" 
 # RUN find / -name "rvm.sh" | xargs source 
 RUN source /etc/profile.d/rvm.sh
