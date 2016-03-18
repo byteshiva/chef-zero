@@ -20,5 +20,5 @@ RUN apt-get update -y && \
     apt-get install -y --no-install-recommends libgecode-dev && \
     apt-get clean && \
     rm -rf /var/cache/apt/archives/* /var/lib/apt/lists/*
-RUN apt-get install ruby-full
+RUN apt-get install ruby
 RUN gem install chef-zero
