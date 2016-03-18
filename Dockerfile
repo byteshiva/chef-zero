@@ -25,3 +25,5 @@ RUN \curl --insecure  https://get.rvm.io | bash -s stable
 RUN rvm install 2.3.0
 RUN \rvm use 2.3.0 --default
 RUN \gem install chef-zero
+RUN wget --no-check-certificate https://packages.chef.io/stable/ubuntu/12.04/chefdk_0.11.2-1_amd64.deb
+RUN dpkg -i chefdk_0.11.2-1_amd64.deb
